@@ -23,7 +23,7 @@ Plugin documentation: [doc/index.md](doc/index.md)
 
 ###Changes in this fork:
 
-In addition to the ```online``` and ```offline``` evemts, the following events were added:
+In addition to the ```online``` and ```offline``` events, the following events were added:
 
 * wifi
 * mobile
