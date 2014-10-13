@@ -50,6 +50,14 @@ var me = new NetworkConnection();
 var timerId = null;
 var timeout = 500;
 
+var clearTimer = function(){
+    // If there is a current offline event pending, clear it
+    if (timerId !== null) {
+        clearTimeout(timerId);
+        timerId = null;
+    }
+}:
+
 channel.createSticky('onCordovaConnectionReady');
 channel.waitForInitialization('onCordovaConnectionReady');
 
@@ -62,12 +70,13 @@ channel.onCordovaReady.subscribe(function() {
                 cordova.fireDocumentEvent("offline");
                 timerId = null;
             }, timeout);
+        else if (info === "wifi") {
+            clearTimer();
+            cordova.fireDocumentEvent("wifi");
+            cordova.fireDocumentEvent("online");
         } else {
-            // If there is a current offline event pending clear it
-            if (timerId !== null) {
-                clearTimeout(timerId);
-                timerId = null;
-            }
+            clearTimer();
+            cordova.fireDocumentEvent("mobile");
             cordova.fireDocumentEvent("online");
         }
 

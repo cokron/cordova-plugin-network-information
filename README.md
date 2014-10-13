@@ -20,3 +20,14 @@
 # org.apache.cordova.network-information
 
 Plugin documentation: [doc/index.md](doc/index.md)
+
+###Changes in this fork:
+
+In addition to the ```online``` and ```offline``` evemts, the following events were added:
+
+* wifi
+* mobile
+
+Wifi is fired, when the connection changes to wifi.
+<br>
+Mobile is fired, when the connection is anything but wifi and offline.
