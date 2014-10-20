@@ -56,7 +56,7 @@ var clearTimer = function(){
         clearTimeout(timerId);
         timerId = null;
     }
-}:
+};
 
 channel.createSticky('onCordovaConnectionReady');
 channel.waitForInitialization('onCordovaConnectionReady');
@@ -70,7 +70,7 @@ channel.onCordovaReady.subscribe(function() {
                 cordova.fireDocumentEvent("offline");
                 timerId = null;
             }, timeout);
-        else if (info === "wifi") {
+        }else if (info === "wifi") {
             clearTimer();
             cordova.fireDocumentEvent("wifi");
             cordova.fireDocumentEvent("online");
