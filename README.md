@@ -26,8 +26,8 @@ Plugin documentation: [doc/index.md](doc/index.md)
 In addition to the ```online``` and ```offline``` events, the following events were added:
 
 * wifi
-* mobile
+* cellular
 
-Wifi is fired, when the connection changes to wifi.
+"wifi" is fired, when the connection changes to wifi.
 <br>
-Mobile is fired, when the connection is anything but wifi and offline.
+"cellular" is fired, when the connection is anything but wifi and offline.

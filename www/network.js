@@ -76,7 +76,7 @@ channel.onCordovaReady.subscribe(function() {
             cordova.fireDocumentEvent("online");
         } else {
             clearTimer();
-            cordova.fireDocumentEvent("mobile");
+            cordova.fireDocumentEvent("cellular");
             cordova.fireDocumentEvent("online");
         }
 
