@@ -1,27 +1,27 @@
-<!---
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-      http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-    KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
+<!--
+# license: Licensed to the Apache Software Foundation (ASF) under one
+#         or more contributor license agreements.  See the NOTICE file
+#         distributed with this work for additional information
+#         regarding copyright ownership.  The ASF licenses this file
+#         to you under the Apache License, Version 2.0 (the
+#         "License"); you may not use this file except in compliance
+#         with the License.  You may obtain a copy of the License at
+#
+#           http://www.apache.org/licenses/LICENSE-2.0
+#
+#         Unless required by applicable law or agreed to in writing,
+#         software distributed under the License is distributed on an
+#         "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+#         KIND, either express or implied.  See the License for the
+#         specific language governing permissions and limitations
+#         under the License.
 -->
 
 # cordova-plugin-network-information
 
-このプラグインは、古いバージョンの[ネットワーク情報 API][1]の実装を提供します。 デバイスの携帯電話や wifi 接続に関する情報を提供し、かどうか、デバイスがインターネットに接続します。
+[![Build Status](https://travis-ci.org/apache/cordova-plugin-network-information.svg)](https://travis-ci.org/apache/cordova-plugin-network-information)
 
- [1]: http://www.w3.org/TR/2011/WD-netinfo-api-20110607/
+このプラグインは、古いバージョンの[ネットワーク情報 API](http://www.w3.org/TR/2011/WD-netinfo-api-20110607/)の実装を提供します。 デバイスの携帯電話や wifi 接続に関する情報を提供し、かどうか、デバイスがインターネットに接続します。
 
 ## インストール
 
@@ -30,15 +30,15 @@
 
 ## サポートされているプラットフォーム
 
-*   アマゾン火 OS
-*   アンドロイド
-*   ブラックベリー 10
-*   ブラウザー
-*   iOS
-*   Windows Phone 7 と 8
-*   Tizen
-*   Windows
-*   Firefox の OS
+  * アマゾン火 OS
+  * アンドロイド
+  * ブラックベリー 10
+  * ブラウザー
+  * iOS
+  * Windows Phone 7 と 8
+  * Tizen
+  * Windows
+  * Firefox の OS
 
 # Connection
 
@@ -46,18 +46,18 @@
 
 ## プロパティ
 
-*   connection.type
+  * connection.type
 
 ## 定数
 
-*   Connection.UNKNOWN
-*   Connection.ETHERNET
-*   Connection.WIFI
-*   Connection.CELL_2G
-*   Connection.CELL_3G
-*   Connection.CELL_4G
-*   Connection.CELL
-*   Connection.NONE
+  * Connection.UNKNOWN
+  * Connection.ETHERNET
+  * Connection.WIFI
+  * Connection.CELL_2G
+  * Connection.CELL_3G
+  * Connection.CELL_4G
+  * Connection.CELL
+  * Connection.NONE
 
 ## connection.type
 
@@ -90,30 +90,34 @@
 
 ### iOS の癖
 
-*   iOS は、携帯電話のネットワーク接続の種類を検出できません。 
-    *   `navigator.connection.type`設定する `Connection.CELL` すべての携帯電話データの。
+  * iOS は、携帯電話のネットワーク接続の種類を検出できません。 
+      * `navigator.connection.type`設定する `Connection.CELL` すべての携帯電話データの。
 
 ### Windows Phone の癖
 
-*   エミュレーターで実行しているときを常に検出 `navigator.connection.type` として`Connection.UNKNOWN`.
+  * エミュレーターで実行しているときを常に検出 `navigator.connection.type` として`Connection.UNKNOWN`.
 
-*   Windows Phone 携帯電話ネットワーク接続の種類を検出できません。
+  * Windows Phone 携帯電話ネットワーク接続の種類を検出できません。
     
-    *   `navigator.connection.type`設定する `Connection.CELL` すべての携帯電話データの。
+      * `navigator.connection.type`設定する `Connection.CELL` すべての携帯電話データの。
 
 ### Windows の癖
 
-*   電話 8.1 エミュレーターで実行する場合は、常に `Connection.ETHERNET` として `navigator.connection.type` を検出します.
+  * 電話 8.1 エミュレーターで実行する場合は、常に `Connection.ETHERNET` として `navigator.connection.type` を検出します.
 
 ### Tizen の癖
 
-*   Tizen には、WiFi または携帯電話の接続だけを検出できます。 
-    *   `navigator.connection.type` は、すべての携帯電話のデータを `Connection.CELL_2G` に設定されます。
+  * Tizen には、WiFi または携帯電話の接続だけを検出できます。 
+      * `navigator.connection.type` は、すべての携帯電話のデータを `Connection.CELL_2G` に設定されます。
 
 ### Firefox OS 癖
 
-*   Firefox の OS は、携帯電話のネットワーク接続の種類を検出できません。 
-    *   `navigator.connection.type`設定する `Connection.CELL` すべての携帯電話データの。
+  * Firefox の OS は、携帯電話のネットワーク接続の種類を検出できません。 
+      * `navigator.connection.type`設定する `Connection.CELL` すべての携帯電話データの。
+
+### ブラウザーの癖
+
+  * ブラウザーは、ネットワーク接続の種類を検出できません。 `navigator.connection.type`は、 `Connection.UNKNOWN`オンライン時に常に設定されます。
 
 # ネットワーク関連のイベント
 

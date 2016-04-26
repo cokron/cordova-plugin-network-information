@@ -1,27 +1,27 @@
-<!---
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-      http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-    KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
+<!--
+# license: Licensed to the Apache Software Foundation (ASF) under one
+#         or more contributor license agreements.  See the NOTICE file
+#         distributed with this work for additional information
+#         regarding copyright ownership.  The ASF licenses this file
+#         to you under the Apache License, Version 2.0 (the
+#         "License"); you may not use this file except in compliance
+#         with the License.  You may obtain a copy of the License at
+#
+#           http://www.apache.org/licenses/LICENSE-2.0
+#
+#         Unless required by applicable law or agreed to in writing,
+#         software distributed under the License is distributed on an
+#         "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+#         KIND, either express or implied.  See the License for the
+#         specific language governing permissions and limitations
+#         under the License.
 -->
 
 # cordova-plugin-network-information
 
-이 플러그인 [네트워크 정보 API][1]의 이전 버전에 대 한 구현을 제공합니다. 소자의 셀룰러와 와이파이 연결에 대 한 정보를 제공 합니다 장치는 인터넷 연결에 있는지 여부.
+[![Build Status](https://travis-ci.org/apache/cordova-plugin-network-information.svg)](https://travis-ci.org/apache/cordova-plugin-network-information)
 
- [1]: http://www.w3.org/TR/2011/WD-netinfo-api-20110607/
+이 플러그인 [네트워크 정보 API](http://www.w3.org/TR/2011/WD-netinfo-api-20110607/)의 이전 버전에 대 한 구현을 제공합니다. 소자의 셀룰러와 와이파이 연결에 대 한 정보를 제공 합니다 장치는 인터넷 연결에 있는지 여부.
 
 ## 설치
 
@@ -30,15 +30,15 @@
 
 ## 지원 되는 플랫폼
 
-*   아마존 화재 운영 체제
-*   안 드 로이드
-*   블랙베리 10
-*   브라우저
-*   iOS
-*   Windows Phone 7과 8
-*   Tizen
-*   윈도우
-*   Firefox 운영 체제
+  * 아마존 화재 운영 체제
+  * 안 드 로이드
+  * 블랙베리 10
+  * 브라우저
+  * iOS
+  * Windows Phone 7과 8
+  * Tizen
+  * 윈도우
+  * Firefox 운영 체제
 
 # 연결
 
@@ -46,18 +46,18 @@
 
 ## 속성
 
-*   connection.type
+  * connection.type
 
 ## 상수
 
-*   Connection.UNKNOWN
-*   Connection.ETHERNET
-*   Connection.WIFI
-*   Connection.CELL_2G
-*   Connection.CELL_3G
-*   Connection.CELL_4G
-*   Connection.CELL
-*   Connection.NONE
+  * Connection.UNKNOWN
+  * Connection.ETHERNET
+  * Connection.WIFI
+  * Connection.CELL_2G
+  * Connection.CELL_3G
+  * Connection.CELL_4G
+  * Connection.CELL
+  * Connection.NONE
 
 ## connection.type
 
@@ -90,30 +90,34 @@
 
 ### iOS 단점
 
-*   iOS는 셀룰러 네트워크 연결의 종류를 감지할 수 없습니다. 
-    *   `navigator.connection.type`로 설정 된 `Connection.CELL` 모든 셀룰러 데이터에 대 한.
+  * iOS는 셀룰러 네트워크 연결의 종류를 감지할 수 없습니다. 
+      * `navigator.connection.type`로 설정 된 `Connection.CELL` 모든 셀룰러 데이터에 대 한.
 
 ### Windows Phone 단점
 
-*   에뮬레이터에서 실행할 때 항상 검색 `navigator.connection.type` 으로`Connection.UNKNOWN`.
+  * 에뮬레이터에서 실행할 때 항상 검색 `navigator.connection.type` 으로`Connection.UNKNOWN`.
 
-*   Windows Phone 셀룰러 네트워크 연결 유형을 검색할 수 없습니다.
+  * Windows Phone 셀룰러 네트워크 연결 유형을 검색할 수 없습니다.
     
-    *   `navigator.connection.type`로 설정 된 `Connection.CELL` 모든 셀룰러 데이터에 대 한.
+      * `navigator.connection.type`로 설정 된 `Connection.CELL` 모든 셀룰러 데이터에 대 한.
 
 ### 윈도우 특수
 
-*   전화 8.1 에뮬레이터에서 실행 하는 경우 항상 `Connection.ETHERNET`로 `navigator.connection.type`를 감지합니다.
+  * 전화 8.1 에뮬레이터에서 실행 하는 경우 항상 `Connection.ETHERNET`로 `navigator.connection.type`를 감지합니다.
 
 ### Tizen 특수
 
-*   Tizen은 와이파이 또는 휴대 전화 연결에만 검색할 수 있습니다. 
-    *   `navigator.connection.type`는 모든 셀룰러 데이터에 대 한 `Connection.CELL_2G`로 설정 됩니다.
+  * Tizen은 와이파이 또는 휴대 전화 연결에만 검색할 수 있습니다. 
+      * `navigator.connection.type`는 모든 셀룰러 데이터에 대 한 `Connection.CELL_2G`로 설정 됩니다.
 
 ### 파이어 폭스 OS 단점
 
-*   파이어 폭스 OS 셀룰러 네트워크 연결 유형을 검색할 수 없습니다. 
-    *   `navigator.connection.type`로 설정 된 `Connection.CELL` 모든 셀룰러 데이터에 대 한.
+  * 파이어 폭스 OS 셀룰러 네트워크 연결 유형을 검색할 수 없습니다. 
+      * `navigator.connection.type`로 설정 된 `Connection.CELL` 모든 셀룰러 데이터에 대 한.
+
+### 브라우저 만지면
+
+  * 브라우저는 네트워크 연결의 종류를 검색할 수 없습니다. `navigator.connection.type` `Connection.UNKNOWN` 때 온라인으로 항상 설정 됩니다.
 
 # 네트워크 관련 이벤트
 

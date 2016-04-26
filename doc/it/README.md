@@ -1,27 +1,27 @@
-<!---
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-      http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-    KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
+<!--
+# license: Licensed to the Apache Software Foundation (ASF) under one
+#         or more contributor license agreements.  See the NOTICE file
+#         distributed with this work for additional information
+#         regarding copyright ownership.  The ASF licenses this file
+#         to you under the Apache License, Version 2.0 (the
+#         "License"); you may not use this file except in compliance
+#         with the License.  You may obtain a copy of the License at
+#
+#           http://www.apache.org/licenses/LICENSE-2.0
+#
+#         Unless required by applicable law or agreed to in writing,
+#         software distributed under the License is distributed on an
+#         "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+#         KIND, either express or implied.  See the License for the
+#         specific language governing permissions and limitations
+#         under the License.
 -->
 
 # cordova-plugin-network-information
 
-Questo plugin fornisce un'implementazione di una vecchia versione dell' [API di informazioni di rete][1]. Fornisce informazioni sul dispositivo cellulare e connessione wifi, e se il dispositivo dispone di una connessione internet.
+[![Build Status](https://travis-ci.org/apache/cordova-plugin-network-information.svg)](https://travis-ci.org/apache/cordova-plugin-network-information)
 
- [1]: http://www.w3.org/TR/2011/WD-netinfo-api-20110607/
+Questo plugin fornisce un'implementazione di una vecchia versione dell' [API di informazioni di rete](http://www.w3.org/TR/2011/WD-netinfo-api-20110607/). Fornisce informazioni sul dispositivo cellulare e connessione wifi, e se il dispositivo dispone di una connessione internet.
 
 ## Installazione
 
@@ -30,15 +30,15 @@ Questo plugin fornisce un'implementazione di una vecchia versione dell' [API di 
 
 ## Piattaforme supportate
 
-*   Amazon fuoco OS
-*   Android
-*   BlackBerry 10
-*   Browser
-*   iOS
-*   Windows Phone 7 e 8
-*   Tizen
-*   Windows
-*   Firefox OS
+  * Amazon fuoco OS
+  * Android
+  * BlackBerry 10
+  * Browser
+  * iOS
+  * Windows Phone 7 e 8
+  * Tizen
+  * Windows
+  * Firefox OS
 
 # Connessione
 
@@ -46,18 +46,18 @@ Questo plugin fornisce un'implementazione di una vecchia versione dell' [API di 
 
 ## Proprietà
 
-*   connection.type
+  * connection.type
 
 ## Costanti
 
-*   Connection.UNKNOWN
-*   Connection.ETHERNET
-*   Connection.WIFI
-*   Connection.CELL_2G
-*   Connection.CELL_3G
-*   Connection.CELL_4G
-*   Connection.CELL
-*   Connection.NONE
+  * Connection.UNKNOWN
+  * Connection.ETHERNET
+  * Connection.WIFI
+  * Connection.CELL_2G
+  * Connection.CELL_3G
+  * Connection.CELL_4G
+  * Connection.CELL
+  * Connection.NONE
 
 ## connection.type
 
@@ -90,30 +90,34 @@ Fino a Cordova 2.3.0, il `Connection` oggetto era accessibile tramite `navigator
 
 ### iOS stranezze
 
-*   iOS non è possibile rilevare il tipo di connessione di rete cellulare. 
-    *   `navigator.connection.type`è impostata su `Connection.CELL` per tutti i dati cellulare.
+  * iOS non è possibile rilevare il tipo di connessione di rete cellulare. 
+      * `navigator.connection.type`è impostata su `Connection.CELL` per tutti i dati cellulare.
 
 ### Stranezze di Windows Phone
 
-*   Quando è in esecuzione nell'emulatore, rileva sempre `navigator.connection.type` come`Connection.UNKNOWN`.
+  * Quando è in esecuzione nell'emulatore, rileva sempre `navigator.connection.type` come`Connection.UNKNOWN`.
 
-*   Windows Phone non riesce a rilevare il tipo di connessione di rete cellulare.
+  * Windows Phone non riesce a rilevare il tipo di connessione di rete cellulare.
     
-    *   `navigator.connection.type`è impostata su `Connection.CELL` per tutti i dati cellulare.
+      * `navigator.connection.type`è impostata su `Connection.CELL` per tutti i dati cellulare.
 
 ### Stranezze di Windows
 
-*   Quando è in esecuzione nell'emulatore Phone 8.1, sempre rileva `navigator.connection.type` come `Connection.ETHERNET`.
+  * Quando è in esecuzione nell'emulatore Phone 8.1, sempre rileva `navigator.connection.type` come `Connection.ETHERNET`.
 
 ### Tizen stranezze
 
-*   Tizen può rilevare solo un WiFi o una connessione cellulare. 
-    *   `navigator.connection.type` è impostata su `Connection.CELL_2G` per tutti i dati cellulare.
+  * Tizen può rilevare solo un WiFi o una connessione cellulare. 
+      * `navigator.connection.type` è impostata su `Connection.CELL_2G` per tutti i dati cellulare.
 
 ### Firefox OS stranezze
 
-*   Sistema operativo Firefox non riesce a rilevare il tipo di connessione di rete cellulare. 
-    *   `navigator.connection.type`è impostata su `Connection.CELL` per tutti i dati cellulare.
+  * Sistema operativo Firefox non riesce a rilevare il tipo di connessione di rete cellulare. 
+      * `navigator.connection.type`è impostata su `Connection.CELL` per tutti i dati cellulare.
+
+### Stranezze browser
+
+  * Browser non è in grado di rilevare il tipo di connessione di rete. `navigator.connection.type` è sempre impostata su `Connection.UNKNOWN` quando si è online.
 
 # Eventi relativi alla rete
 

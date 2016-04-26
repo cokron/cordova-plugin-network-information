@@ -1,27 +1,27 @@
-<!---
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-      http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-    KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
+<!--
+# license: Licensed to the Apache Software Foundation (ASF) under one
+#         or more contributor license agreements.  See the NOTICE file
+#         distributed with this work for additional information
+#         regarding copyright ownership.  The ASF licenses this file
+#         to you under the Apache License, Version 2.0 (the
+#         "License"); you may not use this file except in compliance
+#         with the License.  You may obtain a copy of the License at
+#
+#           http://www.apache.org/licenses/LICENSE-2.0
+#
+#         Unless required by applicable law or agreed to in writing,
+#         software distributed under the License is distributed on an
+#         "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+#         KIND, either express or implied.  See the License for the
+#         specific language governing permissions and limitations
+#         under the License.
 -->
 
 # cordova-plugin-network-information
 
-這個外掛程式提供的舊版本的[網路資訊 API][1]實現的。 它提供了有關該設備的行動電話和無線網路連接的資訊和設備是否已連接到 internet。
+[![Build Status](https://travis-ci.org/apache/cordova-plugin-network-information.svg)](https://travis-ci.org/apache/cordova-plugin-network-information)
 
- [1]: http://www.w3.org/TR/2011/WD-netinfo-api-20110607/
+這個外掛程式提供的舊版本的[網路資訊 API](http://www.w3.org/TR/2011/WD-netinfo-api-20110607/)實現的。 它提供了有關該設備的行動電話和無線網路連接的資訊和設備是否已連接到 internet。
 
 ## 安裝
 
@@ -30,15 +30,15 @@
 
 ## 支援的平臺
 
-*   亞馬遜火 OS
-*   Android 系統
-*   黑莓 10
-*   瀏覽器
-*   iOS
-*   Windows Phone 7 和 8
-*   泰
-*   Windows
-*   火狐瀏覽器的作業系統
+  * 亞馬遜火 OS
+  * Android 系統
+  * 黑莓 10
+  * 瀏覽器
+  * iOS
+  * Windows Phone 7 和 8
+  * Tizen
+  * Windows
+  * 火狐瀏覽器作業系統
 
 # 連接
 
@@ -46,18 +46,18 @@
 
 ## 屬性
 
-*   connection.type
+  * connection.type
 
 ## 常量
 
-*   Connection.UNKNOWN
-*   Connection.ETHERNET
-*   Connection.WIFI
-*   Connection.CELL_2G
-*   Connection.CELL_3G
-*   Connection.CELL_4G
-*   Connection.CELL
-*   Connection.NONE
+  * Connection.UNKNOWN
+  * Connection.ETHERNET
+  * Connection.WIFI
+  * Connection.CELL_2G
+  * Connection.CELL_3G
+  * Connection.CELL_4G
+  * Connection.CELL
+  * Connection.NONE
 
 ## connection.type
 
@@ -90,30 +90,34 @@
 
 ### iOS 的怪癖
 
-*   iOS 無法檢測到蜂窩網路連接的類型。 
-    *   `navigator.connection.type`設置為 `Connection.CELL` 為所有蜂窩資料。
+  * iOS 無法檢測到蜂窩網路連接的類型。 
+      * `navigator.connection.type`設置為 `Connection.CELL` 為所有蜂窩資料。
 
 ### Windows Phone 怪癖
 
-*   當運行在模擬器中，總能檢測到 `navigator.connection.type` 作為`Connection.UNKNOWN`.
+  * 當運行在模擬器中，總能檢測到 `navigator.connection.type` 作為`Connection.UNKNOWN`.
 
-*   Windows Phone 不能檢測的蜂窩網路連接的類型。
+  * Windows Phone 不能檢測的蜂窩網路連接的類型。
     
-    *   `navigator.connection.type`設置為 `Connection.CELL` 為所有蜂窩資料。
+      * `navigator.connection.type`設置為 `Connection.CELL` 為所有蜂窩資料。
 
 ### Windows 的怪癖
 
-*   當電話 8.1 在模擬器中運行，總能檢測到 `navigator.connection.type` 作為 `Connection.ETHERNET`.
+  * 當電話 8.1 在模擬器中運行，總能檢測到 `navigator.connection.type` 作為 `Connection.ETHERNET`.
 
 ### Tizen 怪癖
 
-*   泰只能檢測一個 WiFi 或細胞連接。 
-    *   `navigator.connection.type` 是所有蜂窩資料設置為 `Connection.CELL_2G`。
+  * 泰只能檢測一個 WiFi 或細胞連接。 
+      * `navigator.connection.type` 是所有蜂窩資料設置為 `Connection.CELL_2G`。
 
 ### 火狐瀏覽器作業系統的怪癖
 
-*   火狐瀏覽器作業系統無法檢測到蜂窩網路連接的類型。 
-    *   `navigator.connection.type`設置為 `Connection.CELL` 為所有蜂窩資料。
+  * 火狐瀏覽器作業系統無法檢測到蜂窩網路連接的類型。 
+      * `navigator.connection.type`設置為 `Connection.CELL` 為所有蜂窩資料。
+
+### 瀏覽器的怪癖
+
+  * 瀏覽器無法檢測到網路連接的類型。 `navigator.connection.type`總是被設置為`Connection.UNKNOWN`時線上。
 
 # 與網路相關的事件
 

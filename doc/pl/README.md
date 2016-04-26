@@ -1,27 +1,27 @@
-<!---
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-      http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-    KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
+<!--
+# license: Licensed to the Apache Software Foundation (ASF) under one
+#         or more contributor license agreements.  See the NOTICE file
+#         distributed with this work for additional information
+#         regarding copyright ownership.  The ASF licenses this file
+#         to you under the Apache License, Version 2.0 (the
+#         "License"); you may not use this file except in compliance
+#         with the License.  You may obtain a copy of the License at
+#
+#           http://www.apache.org/licenses/LICENSE-2.0
+#
+#         Unless required by applicable law or agreed to in writing,
+#         software distributed under the License is distributed on an
+#         "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+#         KIND, either express or implied.  See the License for the
+#         specific language governing permissions and limitations
+#         under the License.
 -->
 
 # cordova-plugin-network-information
 
-Wtyczka stanowi implementację starą wersję [API informacji w sieci][1]. Udostępnia informacje na temat urządzenia komórkowe i wifi połączenie, i czy urządzenie ma połączenie z Internetem.
+[![Build Status](https://travis-ci.org/apache/cordova-plugin-network-information.svg)](https://travis-ci.org/apache/cordova-plugin-network-information)
 
- [1]: http://www.w3.org/TR/2011/WD-netinfo-api-20110607/
+Wtyczka stanowi implementację starą wersję [API informacji w sieci](http://www.w3.org/TR/2011/WD-netinfo-api-20110607/). Udostępnia informacje na temat urządzenia komórkowe i wifi połączenie, i czy urządzenie ma połączenie z Internetem.
 
 ## Instalacja
 
@@ -30,15 +30,15 @@ Wtyczka stanowi implementację starą wersję [API informacji w sieci][1]. Udost
 
 ## Obsługiwane platformy
 
-*   Amazon Fire OS
-*   Android
-*   BlackBerry 10
-*   Przeglądarka
-*   iOS
-*   Windows Phone 7 i 8
-*   Tizen
-*   Windows
-*   Firefox OS
+  * Amazon Fire OS
+  * Android
+  * BlackBerry 10
+  * Przeglądarka
+  * iOS
+  * Windows Phone 7 i 8
+  * Tizen
+  * Windows
+  * Firefox OS
 
 # Połączenie
 
@@ -46,18 +46,18 @@ Wtyczka stanowi implementację starą wersję [API informacji w sieci][1]. Udost
 
 ## Właściwości
 
-*   Connection.Type
+  * Connection.Type
 
 ## Stałe
 
-*   Connection.UNKNOWN
-*   Connection.ETHERNET
-*   Connection.WIFI
-*   Connection.CELL_2G
-*   Connection.CELL_3G
-*   Connection.CELL_4G
-*   Connection.CELL
-*   Connection.NONE
+  * Connection.UNKNOWN
+  * Connection.ETHERNET
+  * Connection.WIFI
+  * Connection.CELL_2G
+  * Connection.CELL_3G
+  * Connection.CELL_4G
+  * Connection.CELL
+  * Connection.NONE
 
 ## Connection.Type
 
@@ -90,30 +90,34 @@ Do Cordova 2.3.0 `Connection` obiekt uzyskano za pośrednictwem `navigator.netwo
 
 ### Dziwactwa iOS
 
-*   iOS nie może wykryć typ połączenia w sieci komórkowej. 
-    *   `navigator.connection.type`jest zestaw `Connection.CELL` dla wszystkich komórek danych.
+  * iOS nie może wykryć typ połączenia w sieci komórkowej. 
+      * `navigator.connection.type`jest zestaw `Connection.CELL` dla wszystkich komórek danych.
 
 ### Windows Phone dziwactwa
 
-*   Po uruchomieniu w emulatorze, zawsze wykrywa `navigator.connection.type` jako`Connection.UNKNOWN`.
+  * Po uruchomieniu w emulatorze, zawsze wykrywa `navigator.connection.type` jako`Connection.UNKNOWN`.
 
-*   Windows Phone nie może wykryć typ połączenia w sieci komórkowej.
+  * Windows Phone nie może wykryć typ połączenia w sieci komórkowej.
     
-    *   `navigator.connection.type`jest zestaw `Connection.CELL` dla wszystkich komórek danych.
+      * `navigator.connection.type`jest zestaw `Connection.CELL` dla wszystkich komórek danych.
 
 ### Windows dziwactwa
 
-*   Po uruchomieniu w emulatorze telefonu 8.1, zawsze wykrywa `navigator.connection.type` jako `Connection.ETHERNET`.
+  * Po uruchomieniu w emulatorze telefonu 8.1, zawsze wykrywa `navigator.connection.type` jako `Connection.ETHERNET`.
 
 ### Dziwactwa Tizen
 
-*   Tizen można tylko dostrzegać Wi-Fi lub połączenia komórkowe. 
-    *   `Navigator.Connection.Type` jest zestaw do `Connection.CELL_2G` dla wszystkich komórek danych.
+  * Tizen można tylko dostrzegać Wi-Fi lub połączenia komórkowe. 
+      * `Navigator.Connection.Type` jest zestaw do `Connection.CELL_2G` dla wszystkich komórek danych.
 
 ### Firefox OS dziwactwa
 
-*   Firefox OS nie można wykryć typ połączenia w sieci komórkowej. 
-    *   `navigator.connection.type`jest zestaw `Connection.CELL` dla wszystkich komórek danych.
+  * Firefox OS nie można wykryć typ połączenia w sieci komórkowej. 
+      * `navigator.connection.type`jest zestaw `Connection.CELL` dla wszystkich komórek danych.
+
+### Quirks przeglądarki
+
+  * Przeglądarka nie może wykryć typ połączenia sieciowego. `Navigator.Connection.Type` jest zawsze zestaw do `Connection.UNKNOWN` podczas online.
 
 # Zdarzenia związane z sieci
 

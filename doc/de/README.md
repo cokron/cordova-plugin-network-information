@@ -1,27 +1,27 @@
-<!---
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-      http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-    KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
+<!--
+# license: Licensed to the Apache Software Foundation (ASF) under one
+#         or more contributor license agreements.  See the NOTICE file
+#         distributed with this work for additional information
+#         regarding copyright ownership.  The ASF licenses this file
+#         to you under the Apache License, Version 2.0 (the
+#         "License"); you may not use this file except in compliance
+#         with the License.  You may obtain a copy of the License at
+#
+#           http://www.apache.org/licenses/LICENSE-2.0
+#
+#         Unless required by applicable law or agreed to in writing,
+#         software distributed under the License is distributed on an
+#         "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+#         KIND, either express or implied.  See the License for the
+#         specific language governing permissions and limitations
+#         under the License.
 -->
 
 # cordova-plugin-network-information
 
-Dieses Plugin stellt eine Implementierung einer alten Version der [Netzwerk-Informationen-API][1]. Es werden Informationen über das Gerät Mobilfunk und Wifi-Anschluss, und ob das Gerät über eine Internetverbindung verfügt.
+[![Build Status](https://travis-ci.org/apache/cordova-plugin-network-information.svg)](https://travis-ci.org/apache/cordova-plugin-network-information)
 
- [1]: http://www.w3.org/TR/2011/WD-netinfo-api-20110607/
+Dieses Plugin stellt eine Implementierung einer alten Version der [Netzwerk-Informationen-API](http://www.w3.org/TR/2011/WD-netinfo-api-20110607/). Es werden Informationen über das Gerät Mobilfunk und Wifi-Anschluss, und ob das Gerät über eine Internetverbindung verfügt.
 
 ## Installation
 
@@ -30,15 +30,15 @@ Dieses Plugin stellt eine Implementierung einer alten Version der [Netzwerk-Info
 
 ## Unterstützte Plattformen
 
-*   Amazon Fire OS
-*   Android
-*   BlackBerry 10
-*   Browser
-*   iOS
-*   Windows Phone 7 und 8
-*   Tizen
-*   Windows
-*   Firefox OS
+  * Amazon Fire OS
+  * Android
+  * BlackBerry 10
+  * Browser
+  * iOS
+  * Windows Phone 7 und 8
+  * Tizen
+  * Windows
+  * Firefox OS
 
 # Connection
 
@@ -46,18 +46,18 @@ Dieses Plugin stellt eine Implementierung einer alten Version der [Netzwerk-Info
 
 ## Eigenschaften
 
-*   connection.type
+  * connection.type
 
 ## Konstanten
 
-*   Connection.UNKNOWN
-*   Connection.ETHERNET
-*   Connection.WIFI
-*   Connection.CELL_2G
-*   Connection.CELL_3G
-*   Connection.CELL_4G
-*   Connection.CELL
-*   Connection.NONE
+  * Connection.UNKNOWN
+  * Connection.ETHERNET
+  * Connection.WIFI
+  * Connection.CELL_2G
+  * Connection.CELL_3G
+  * Connection.CELL_4G
+  * Connection.CELL
+  * Connection.NONE
 
 ## connection.type
 
@@ -90,30 +90,34 @@ Bis Cordova 2.3.0 wurde auf das `Connection` Objekt über `navigator.network.con
 
 ### iOS Macken
 
-*   iOS kann Mobilfunknetz Verbindungstyp nicht erkennen. 
-    *   `navigator.connection.type`auf festgelegt ist `Connection.CELL` für alle Handy-Daten.
+  * iOS kann Mobilfunknetz Verbindungstyp nicht erkennen. 
+      * `navigator.connection.type`auf festgelegt ist `Connection.CELL` für alle Handy-Daten.
 
 ### Windows Phone Macken
 
-*   Wenn im Emulator ausgeführt wird, erkennt immer `navigator.connection.type` als`Connection.UNKNOWN`.
+  * Wenn im Emulator ausgeführt wird, erkennt immer `navigator.connection.type` als`Connection.UNKNOWN`.
 
-*   Windows Phone kann Mobilfunknetz Verbindungstyp nicht erkennen.
+  * Windows Phone kann Mobilfunknetz Verbindungstyp nicht erkennen.
     
-    *   `navigator.connection.type`auf festgelegt ist `Connection.CELL` für alle Handy-Daten.
+      * `navigator.connection.type`auf festgelegt ist `Connection.CELL` für alle Handy-Daten.
 
 ### Windows-Eigenheiten
 
-*   Wenn im Telefon 8.1 Emulator ausgeführt wird, erkennt immer `navigator.connection.type` als `Connection.ETHERNET`.
+  * Wenn im Telefon 8.1 Emulator ausgeführt wird, erkennt immer `navigator.connection.type` als `Connection.ETHERNET`.
 
 ### Tizen Macken
 
-*   Tizen kann nur ein WiFi oder Mobilfunkverbindung erkennen. 
-    *   `Navigator.Connection.Type` ist für alle Handy-Daten auf `Connection.CELL_2G` festgelegt.
+  * Tizen kann nur ein WiFi oder Mobilfunkverbindung erkennen. 
+      * `Navigator.Connection.Type` ist für alle Handy-Daten auf `Connection.CELL_2G` festgelegt.
 
 ### Firefox OS Macken
 
-*   Firefox-OS kann Mobilfunknetz Verbindungstyp nicht erkennen. 
-    *   `navigator.connection.type`auf festgelegt ist `Connection.CELL` für alle Handy-Daten.
+  * Firefox-OS kann Mobilfunknetz Verbindungstyp nicht erkennen. 
+      * `navigator.connection.type`auf festgelegt ist `Connection.CELL` für alle Handy-Daten.
+
+### Browser-Eigenheiten
+
+  * Browser kann die Art der Netzwerkverbindung nicht erkennen. `navigator.connection.type` ist immer auf `Connection.UNKNOWN` beim online gesetzt.
 
 # Netzwerk-Veranstaltungen
 
